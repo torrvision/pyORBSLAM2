@@ -1,5 +1,5 @@
 # FROM defines the base image
-FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04
+FROM ubuntu16.04
 
 ######################################
 # SECTION 1: Essentials              #

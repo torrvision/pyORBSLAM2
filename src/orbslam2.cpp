@@ -39,6 +39,8 @@ class SLAMClass{
             PyObject* ret = cvt.toNDArray(camera_matrix);
             return ret;
         }
+        ~SLAMClass();
+
 
     private:
         ORB_SLAM2::System *slam_obj;
@@ -46,6 +48,10 @@ class SLAMClass{
 
     SLAMClass::SLAMClass() {
         // nothing
+    }
+
+    SLAMClass::~SLAMClass() {
+        delete this->slam_obj; // Otherwise may end up with a SegFault!!
     }
 
 //--------------------------------Boost-Python-Code
