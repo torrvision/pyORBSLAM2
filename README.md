@@ -3,13 +3,15 @@
 
 Are you using ORBSLAM2 for your latest tracking project? Do you just want to create a quick prototype, or are you weary of writing C++ code? Then this repository is for you! Simply interface ORBSLAM2 from python2.x/3, using your favourite NumPy arrays as necessary. It is as easy as:
 
-`
-import ORBSLAM2 as os2
-slam_obj = os2.SLAM()
-slam_obj.init("/slamdoom/libs/orbslam2/Vocabulary/ORBvoc.txt", "/slamdoom/libs/orbslam2/Examples/RGB-D/TUM1.yaml")
-slam_obj.track(array, array_d, time.time())
-del slam_obj
-`
+`import ORBSLAM2 as os2`
+
+`slam_obj = os2.SLAM()`
+
+`slam_obj.init("/slamdoom/libs/orbslam2/Vocabulary/ORBvoc.txt", "/slamdoom/libs/orbslam2/Examples/RGB-D/TUM1.yaml")`
+
+`slam_obj.track(array, array_d, time.time())`
+
+`del slam_obj`
 
 
 ![Isn't it cute? :) ](https://cdn.pixabay.com/photo/2014/04/02/14/05/snake-306109_640.png)
