@@ -28,7 +28,7 @@ Install nvidia-docker plugin: see https://github.com/NVIDIA/nvidia-docker
 Now, inside the container SSH shell, simply do:
 (ensure build and bin folders are deleted to force CMake to update properly)
 `/orbslam/src/build.sh`
-export PYTHONPATH=/orbslam/src/build:$PYTHONPATH
+`export PYTHONPATH=/orbslam/src/build:$PYTHONPATH`
 
 Now you should be able to try the test example inside the container:
 `python3 /orbslam/src/test/test.py`
