@@ -6,7 +6,8 @@ Are you using ORBSLAM2 for your latest tracking project? Do you just want to cre
 ```python
 import ORBSLAM2 as os2
 slam_obj = os2.SLAM()
-slam_obj.init("/slamdoom/libs/orbslam2/Vocabulary/ORBvoc.txt", "/slamdoom/libs/orbslam2/Examples/RGB-D/TUM1.yaml")
+slam_obj.init("/slamdoom/libs/orbslam2/Vocabulary/ORBvoc.txt",\
+              "/slamdoom/libs/orbslam2/Examples/RGB-D/TUM1.yaml")
 slam_obj.track(array, array_d, time.time())
 del slam_obj
 ```
