@@ -1,12 +1,18 @@
 # pyORBSLAM2
-**Ultra-fast Boost.Python interface for [ORBSLAM2](https://github.com/raulmur/ORB_SLAM2)**
+*Ultra-fast Boost.Python interface for [ORBSLAM2](https://github.com/raulmur/ORB_SLAM2)*
 
+Are you using ORBSLAM2 for your latest tracking project? Do you just want to create a quick prototype, or are you weary of writing C++ code? Then this repository is for you! Simply interface ORBSLAM2 from python2.x/3, using your favourite NumPy arrays as necessary. It is as easy as:
+
+`
+import ORBSLAM2 as os2
+slam_obj = os2.SLAM()
+slam_obj.init("/slamdoom/libs/orbslam2/Vocabulary/ORBvoc.txt", "/slamdoom/libs/orbslam2/Examples/RGB-D/TUM1.yaml")
+slam_obj.track(array, array_d, time.time())
+del slam_obj
+`
 
 
 ![Isn't it cute? :) ](https://cdn.pixabay.com/photo/2014/04/02/14/05/snake-306109_640.png)
-
-Use run.sh to run nvidia-docker environment to build build/ORBSLAM2.so, which you should then put on your PYTHONPATH.
-See test/test.py for an example. Extend orbslam2.cpp to your needs (comes with NumPy/cv::Mat conversion routines, and already includes Boost::Python::NumPy set up for you should you need it)
 
 You can use this repo as a basis for any other Boost.Python projects as well.
 
@@ -15,6 +21,11 @@ Please contact me at cs@robots.ox.ac.uk any time and I will assist you!
 Best, Christian Schroeder de Witt, Torr Vision Group, University of Oxford, 2017
 
 # Get started
+
+Use run.sh to run nvidia-docker environment to build build/ORBSLAM2.so, which you should then put on your PYTHONPATH.
+See test/test.py for an example. Extend orbslam2.cpp to your needs (comes with NumPy/cv::Mat conversion routines, and already includes Boost::Python::NumPy set up for you should you need it)
+
+See below more detailed steps on how to set up the tutorial examples.
 
 # Ubuntu 
 
