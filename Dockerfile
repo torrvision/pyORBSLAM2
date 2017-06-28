@@ -1,5 +1,7 @@
 # FROM defines the base image
-FROM ubuntu16.04
+# FROM ubuntu16.04
+# FROM ubuntu:latest
+FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04
 
 ######################################
 # SECTION 1: Essentials              #
@@ -50,6 +52,8 @@ RUN mkdir /slamdoom
 RUN mkdir /slamdoom/tmp
 RUN mkdir /slamdoom/libs
 
+RUN apt-get update -y
+
 ######################################
 # SECTION 2: CV packages             #
 ######################################
@@ -85,6 +89,10 @@ RUN pip install matplotlib
 # set up matplotlibrc file so have Qt5Agg backend by default
 RUN mkdir /root/.matplotlib && touch /root/.matplotlib/matplotlibrc && echo "backend: Qt5Agg" >> /root/.matplotlib/matplotlibrc
 RUN apt-get install -y gdb
+
+RUN apt-get install -y libboost-all-dev
+RUN pip install numpy --upgrade
+RUN pip3 install numpy --upgrade
 
 # Fix some linux issue
 ENV DEBIAN_FRONTEND teletype
